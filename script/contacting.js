@@ -95,8 +95,10 @@ httpGetReps(zip,function(resp) {
           mail = mail_split.slice(0, half).join(" ") + "<br>" + mail_split.slice(half, mail_split.length).join(" ");
           console.log(mail);
         }
+
+        var emails = r['email_addresses'].join("<br>")
         $(".carousel-inner").append( generic_card.format(name, r['party'], r['state'], r['image_url'],
-        r['email_addresses'], r['phone_numbers'], r['district'], mail, i.toString()) );
+        emails, r['phone_numbers'], r['district'], mail, i.toString()) );
     });
 
     $(".dummy").remove()
