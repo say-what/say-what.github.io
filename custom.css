@@ -72,6 +72,12 @@ color: White !important;
   font-size: 18px;
 }
 
+.btn-secondary:hover{
+  border-style: solid;
+  border-width: 2px;
+  border-color: DimGray;
+}
+
 .fa {
   color: Gainsboro;
   font-size: 72px;
@@ -85,7 +91,9 @@ color: White !important;
 }
 
 .list-group-item:hover {
-  background: blue;
+  border-style: solid;
+  border-width: 2px;
+  border-color: DimGray;
 }
 
 .img-responsive {
