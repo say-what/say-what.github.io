@@ -1,6 +1,13 @@
-var zip = location.href.substr(location.href.indexOf("?")+1);
+var input = decodeURI(location.href.substr(location.href.indexOf("?")+1));
+
+var params = {};
+input.split('&').forEach(function(item){
+    var pair = item.split('=');
+    params[pair[0]] = pair[1];
+});
+
 var template = {};
-//httpGetTemplates("issue_example_id",printCallback)
+
 httpQueryTemplates(issue,medium,function(resp) {
     var templates = JSON.parse(resp);
 })
