@@ -80,8 +80,18 @@ color: White !important;
   font-family: 'Inconsolata', monospace;
   color: DarkGray;
   font-size: 26px;
+  height: auto;
+  min-height: 50px;
+  line-height: 90%;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .list-group-item:hover {
   background: blue;
+}
+
+#issues_list{
+  overflow-y: scroll;
+  height: 325px;
 }
