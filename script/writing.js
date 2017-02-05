@@ -31,13 +31,15 @@ httpQueryTemplates(params.issue,params.medium,function(resp) {
 	console.log(resp)
     var templates = JSON.parse(resp);
     console.log(templates)
+    
     templates.forEach(function(item){
     	console.log("for each")
     	var test = $('<div class="carousel-item"><div class="card" style="width: 720px; padding: 25px 200px"><img class="card-img-top" src="..." alt="Card image cap"><div class="card-block"><h4 class="card-title">Card title</h4><p class="card-text">'+item.text+'</p><a href="#" class="btn btn-primary">Go somewhere</a></div></div></div>')
     	console.log(test)
     	$("#inner_carousel").append(test)
-    	$(".carousel-inner").append(test)
+    	//$(".carousel-inner").append(test)
     });
+    $($(".carousel-item")[0]).addClass('active')
 
 
 })
