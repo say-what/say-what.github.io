@@ -36,7 +36,7 @@ httpQueryTemplates(params.issue,(params.medium == 'call') ? 'phone' : 'letter',f
 	    
 	    templates.forEach(function(item){
 	    	console.log("for each")
-	    	var test = $('<div class="carousel-item"><div class="card" style="width: 720px; padding: 25px 200px"><img class="card-img-top" src="..." alt="Card image cap"><div class="card-block"><h4 class="card-title">Card title</h4><p class="card-text">'+item.text+'</p></div></div></div>')
+	    	var test = $('<div class="carousel-item"><div class="card" style="width: 720px; padding: 25px 200px"><div class="card-block"><h4 class="card-title">Card title</h4><p class="card-text">'+item.text+'</p></div></div></div>')
 	    	console.log(test)
 	    	$("#inner_carousel").append(test)
 	    	jQuery.data(test, "template", item );
@@ -51,7 +51,7 @@ httpQueryTemplates(params.issue,(params.medium == 'call') ? 'phone' : 'letter',f
 		item.lastName = "BLAHHHHH"
 
 		item.text = 'Hello, <span class="official"></span> office. This is <span class="adlib">Your Name</span> and I\'d like to speak to the staffer who works on healthcare.[If necessary wait for the correct person to be put on the line] I am calling about the recent overhaul to Medicare by the current administration. As one of your many constituents who currently receives their health insurance from Medicare, I would like to ensure that <span class="official"></span> makes sure that I am covered in the future. Furthermore, I would like to know whether or not <span class="official"></span> plans to make a public stand on this issue.[Respond to any further questions they may have]. yes, please express to <span class="official"></span> that the executive order doesn\'t respresent our values, and that I am asking him/her to take a principled public stand against this kind of intolerancce. Thanks for your time. <span class="adlib">your name</span> Thank you.';
-    	var test = $('<div class="carousel-item"><div class="card" style="width: 720px; padding: 25px 200px"><img class="card-img-top" src="..." alt="Card image cap"><div class="card-block"><h4 class="card-title">Card title</h4><p class="card-text">'+item.text+'</p></div></div></div>')
+    	var test = $('<div class="carousel-item"><div class="card" style="width: 720px; padding: 25px 200px"><div class="card-block"><h4 class="card-title">Card title</h4><p class="card-text">'+item.text+'</p></div></div></div>')
     	
     	jQuery.data(test, "template", item );
 
