@@ -27,7 +27,7 @@
   font-size: 18px;
 }
 
-.input-group {
+.form-control {
   border-style: solid;
   border-width: 2px;
   border-color: DimGray;
@@ -37,4 +37,8 @@
   font-family: 'Merriweather', serif;
   color: DimGray;
   font-size: 26px;
+}
+
+.btn-secondary {
+  border-width: 0px;
 }
