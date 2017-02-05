@@ -14,13 +14,13 @@ $(".issue").click( function() {
 });
 
 var checkOptions = function() {
-    if ($(".medium-btn.focus") && $(".stance-btn.focus") && $(".issue.focus")) {
+    if ($(".medium-btn.focus").length != 0 && $(".stance-btn.focus").length != 0 && $(".issue.focus").length != 0) {
         $("#nextButton i").css('color','green');
-        $("#nextButton i").on(linkToWriting());}
+        $("#nextButton i").click(linkToWriting);}
 };
 $(".medium-btn").click( function(e){ e.preventDefault(); $(".medium-btn.focus").removeClass('focus'); $(this).addClass('focus'); checkOptions();});
-$(".stance-btn").click( function(e){ e.preventDefault(); $(".stance-btn.focus").removeClass('focus'); $(this).addClass('focus');});
-$(".issue").click( function(e){ e.preventDefault(); $(".issue.focus").removeClass('focus'); $(this).addClass('focus');});
+$(".stance-btn").click( function(e){ e.preventDefault(); $(".stance-btn.focus").removeClass('focus'); $(this).addClass('focus'); checkOptions();});
+$(".issue").click( function(e){ e.preventDefault(); $(".issue.focus").removeClass('focus'); $(this).addClass('focus'); checkOptions();});
 
 
 // String formatting method
