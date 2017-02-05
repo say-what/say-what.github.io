@@ -15,7 +15,7 @@
   font-size: 72px;
 }
 
-.card-title, #basic-addon1 {
+.card-title, .input-group-addon {
   font-family: 'Merriweather', serif;
   color: DimGray;
   font-size: 26px;
