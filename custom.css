@@ -106,6 +106,15 @@ color: DarkGray !important;
   width: 250px !important;
 }
 
+#nextButton {
+  font-size: 94px;
+  z-index: 100;
+}
+
+#nextButton: hover {
+  border-width: 0px;
+}
+
 
 form-control::-webkit-input-placeholder {
 color: DarkGray !important;
@@ -115,4 +124,12 @@ color: DarkGray !important;
 }
 form-control:-ms-input-placeholder {
 color: DarkGray !important;
+}
+
+.list-group-item {
+    color:#fff !important;
+}
+
+.issue.selected {
+    border-color:#fff !important;
 }
