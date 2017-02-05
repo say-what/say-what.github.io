@@ -6,7 +6,7 @@ $("#zip_input").keyup(function() {
         $(".nav-item:nth-of-type(2) a").removeClass('disabled');
     }else{
         $("#zip_submit a").removeAttr("href");
-        $("#zip_submit i").css('color','#292b2c');
+        $("#zip_submit i").css('color','Gainsboro');
         $(".nav-item:nth-of-type(2) a").addClass('disabled');
     }
 });
