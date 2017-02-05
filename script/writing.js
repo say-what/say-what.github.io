@@ -1,8 +1,30 @@
+
+function httpQueryTemplates(issue,medium,callback)
+{
+	var url = 'https://hab2017.azurewebsites.net/api/querytemplate/'
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+
+    xmlHttp.open("POST", url, true); // true for asynchronous 
+	xmlHttp.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8' );
+    xmlHttp.send("{'issue':'"+issue+"','medium':'"+medium+"'}");
+}
+
 var zip = location.href.substr(location.href.indexOf("?")+1);
 var template = {};
 //httpGetTemplates("issue_example_id",printCallback)
 httpQueryTemplates(issue,medium,function(resp) {
+	console.log("here")
     var templates = JSON.parse(resp);
+    templates.forEach(function(item){
+    	console.log("for each")
+    	$("#inner_carousel").append($('<div class="carousel-item"><div class="card" style="width: 720px; padding: 25px 200px"><img class="card-img-top" src="..." alt="Card image cap"><div class="card-block"><h4 class="card-title">Card title</h4><p class="card-text">'+item.text+'</p><a href="#" class="btn btn-primary">Go somewhere</a></div></div></div>'))
+    });
+
+
 })
 $("#use_template_button").click(function() {
 
