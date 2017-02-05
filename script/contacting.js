@@ -62,7 +62,7 @@ httpGetReps(zip,function(resp) {
         var name = r['title'] + ' '+ r['firstName'] + ' ' +  r['lastName'];
         if (name.length > 20) {
           console.log(name)
-          name = r['title'] + ' '+ r['firstName'] + '\n' + r['lastName'];
+          name = r['title'] + ' '+ r['firstName'] + '<br>' + r['lastName'];
         }
         $(".carousel-inner").append( generic_card.format(name, r['party'], r['state'], r['image_url']) );
     });
