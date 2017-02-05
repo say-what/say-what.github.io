@@ -33,41 +33,33 @@ httpQueryTemplates(params.issue,(params.medium == 'call') ? 'phone' : 'letter',f
 
     if(templates.length > 0){
 	    console.log(templates)
+
+	    $(".carousel-item").hide()
+		$(".carousel-item").remove()
+		$(".carousel-item").show()
 	    
 	    templates.forEach(function(item){
 	    	console.log("for each")
-	    	var test = $('<div class="carousel-item"><div class="card" style="width: 720px; padding: 25px 200px"><div class="card-block"><h4 class="card-title">Card title</h4><p class="card-text">'+item.text+'</p></div></div></div>')
+	    	var test = $('<div class="carousel-item"><div class="card" style="width: 1000px; padding: 25px 200px"><div class="card-block"><p class="card-text">'+item.text+'</p></div></div></div>')
 	    	console.log(test)
 	    	$("#inner_carousel").append(test)
 	    	jQuery.data(test, "template", item );
 	    	//$(".carousel-inner").append(test)
 	    });
 	    $($(".carousel-item")[0]).addClass('active')
+	    $(".card-block").css('width','600px')
+
 	}
 	else{
-
-		var item = {}
-		item.medium = 'call';
-		item.lastName = "BLAHHHHH"
-
-		item.text = 'Hello, <span class="official"></span> office. This is <span class="adlib">Your Name</span> and I\'d like to speak to the staffer who works on healthcare.[If necessary wait for the correct person to be put on the line] I am calling about the recent overhaul to Medicare by the current administration. As one of your many constituents who currently receives their health insurance from Medicare, I would like to ensure that <span class="official"></span> makes sure that I am covered in the future. Furthermore, I would like to know whether or not <span class="official"></span> plans to make a public stand on this issue.[Respond to any further questions they may have]. yes, please express to <span class="official"></span> that the executive order doesn\'t respresent our values, and that I am asking him/her to take a principled public stand against this kind of intolerancce. Thanks for your time. <span class="adlib">your name</span> Thank you.';
-    	var test = $('<div class="carousel-item"><div class="card" style="width: 720px; padding: 25px 200px"><div class="card-block"><h4 class="card-title">Card title</h4><p class="card-text">'+item.text+'</p></div></div></div>')
-    	
-    	jQuery.data(test, "template", item );
-
-    	console.log(test)
-    	$("#inner_carousel").append(test)
-    	//$(".carousel-inner").append(test)
-
-	    $($(".carousel-item")[0]).addClass('active')
 	}
-
 
 })
 $("#use_template_button").click(function() {
 
 	var curr = $(".carousel-item.active")
 	var html = curr[0].innerHTML
+
+	console.log(curr)
 
 	temp = jQuery.data(curr,"template")
 
