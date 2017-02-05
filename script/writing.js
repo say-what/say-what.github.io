@@ -45,3 +45,9 @@ $("#use_template_button").click(function() {
 		}
 	})
 });
+
+$("#create_template_button").click(function(){
+	console.log($(".jumbotron"))
+	var overlay = $('<div id="edit_box" contenteditable="true" style="width:100%;height:100%;"></div>')
+	overlay.insertAfter($(".jumbotron"))
+});
