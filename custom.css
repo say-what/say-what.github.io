@@ -26,3 +26,9 @@
   color: DarkGray;
   font-size: 18px;
 }
+
+.input-group-addon {
+  font-family: 'Merriweather', serif !important;
+  color: DimGray;
+  font-size: 26px;
+}
