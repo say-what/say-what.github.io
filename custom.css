@@ -41,10 +41,20 @@
 
 .btn-secondary {
   border-width: 0px;
+  font-family: 'Inconsolata', monospace;
+  color: DarkGray;
+  font-size: 18px;
 }
 
 .fa {
   color: Gainsboro;
+}
+
+.list-group-item {
+  border-width: 0px;
+  font-family: 'Inconsolata', monospace;
+  color: DarkGray;
+  font-size: 26px;
 }
 
 .list-group-item:hover {
