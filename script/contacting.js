@@ -69,7 +69,7 @@ var generic_card = '<div class="carousel-item " index={4}>' +
                   '<div class="row">' +
                     '<div class="card-block">' +
                       '<h4 class="card-title">{0}</h4>' +
-                      '<p class="card-text">{1} / {2}</p>' +
+                      '<p class="card-text">{1} / {2}<br>district:{6}<br>{5}<br>{7}<br>{4}</p>' +
                     '</div>' +
                     '<div class="container" style="height:250px; width:332px">' +
                       '<img class="img-responsive" style="height:320px; width:250px" src="{3}" alt="Card image cap">' +
@@ -87,7 +87,17 @@ httpGetReps(zip,function(resp) {
           console.log(name)
           name = r['title'] + ' '+ r['firstName'] + '<br>' + r['lastName'];
         }
-        $(".carousel-inner").append( generic_card.format(name, r['party'], r['state'], r['image_url'], i.toString()) );
+        var mail = r['mailing_addresses']
+        mail = mail[0];
+        console.log(mail)
+        if (mail.length > 28) {
+          var mail_split = mail.split(" ");
+          var half = Math.floor(mail_split.length/2);
+          mail = mail_split.slice(0, half).join(" ") + "<br>" + mail_split.slice(half, mail_split.length).join(" ");
+          console.log(mail);
+        }
+        $(".carousel-inner").append( generic_card.format(name, r['party'], r['state'], r['image_url'],
+        r['email_addresses'], r['phone_numbers'], r['district'], mail) );
     });
 
     $(".dummy").remove()
