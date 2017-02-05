@@ -27,6 +27,12 @@
   font-size: 18px;
 }
 
+.input-group {
+  border-style: solid;
+  border-width: 2px;
+  border-color: DimGray;
+}
+
 .input-group-addon {
   font-family: 'Merriweather', serif;
   color: DimGray;
