@@ -43,12 +43,14 @@ color: White !important;
   font-family: 'Merriweather', serif;
   color: DimGray;
   font-size: 26px;
+  text-align: center;
 }
 
 .card-text {
   font-family: 'Inconsolata', monospace;
   color: DarkGray;
   font-size: 18px;
+  text-align: center;
 }
 
 .form-control {
@@ -91,7 +93,13 @@ color: White !important;
   background: blue;
 }
 
+
 #issues_list{
   overflow-y: scroll;
   height: 325px;
+}
+
+.img-responsive {
+  heigh: 500px !important;
+  width: 250px !important;
 }
