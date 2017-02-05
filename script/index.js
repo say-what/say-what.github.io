@@ -1,7 +1,7 @@
 
 $("#zip_input").keyup(function() {
     if (this.value.length == 5 && !isNaN(this.value)) {
-        $("#zip_submit i").css('color','SteelBlue');
+        $("#zip_submit i").css('color','Green');
         $("#zip_submit i").wrap( "<a href='contacting.html?" + this.value + "'></a>");
         $(".nav-item:nth-of-type(2) a").removeClass('disabled');
     }else{
