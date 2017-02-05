@@ -120,3 +120,7 @@ color: DarkGray !important;
 form-control:-ms-input-placeholder {
 color: DarkGray !important;
 }
+
+.list-group-item {
+    color:#fff !important;
+}
