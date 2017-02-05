@@ -137,5 +137,9 @@ color: DarkGray !important;
 }
 
 .issue {
-    width: 92%;
+    width: 90%;
+}
+
+.btn-secondary {
+    z-index:200;
 }
