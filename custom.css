@@ -2,6 +2,30 @@
   background-color: black !important;
 }
 
+input::-webkit-input-placeholder {
+color: DarkGray !important;
+}
+
+input::-webkit-input-placeholder.hover {
+color: White !important;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+color: DarkGray !important;
+}
+
+input::-moz-placeholder.active {
+color: White !important;
+}
+
+input:-ms-input-placeholder {
+color: DarkGray !important;
+}
+
+input:-ms-input-placeholder.active {
+color: White !important;
+}
+
 .card {
 
 }
@@ -48,6 +72,7 @@
 
 .fa {
   color: Gainsboro;
+  font-size: 72px;
 }
 
 .list-group-item {
