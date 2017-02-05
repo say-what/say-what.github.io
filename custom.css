@@ -5,27 +5,12 @@
 input::-webkit-input-placeholder {
 color: DarkGray !important;
 }
-
-input::-webkit-input-placeholder.hover {
-color: White !important;
-}
-
 input::-moz-placeholder {  /* Firefox 19+ */
 color: DarkGray !important;
 }
-
-input::-moz-placeholder.active {
-color: White !important;
-}
-
 input:-ms-input-placeholder {
 color: DarkGray !important;
 }
-
-input:-ms-input-placeholder.active {
-color: White !important;
-}
-
 .card {
 
 }
@@ -41,7 +26,6 @@ color: White !important;
 
 .card-title {
   font-family: 'Merriweather', serif;
-  text-overflow: ellipsis;
   color: DimGray;
   font-size: 26px;
   text-align: center;
@@ -120,4 +104,15 @@ color: White !important;
 .img-responsive {
   heigh: 500px !important;
   width: 250px !important;
+}
+
+
+form-control::-webkit-input-placeholder {
+color: DarkGray !important;
+}
+form-control::-moz-placeholder {  /* Firefox 19+ */
+color: DarkGray !important;
+}
+form-control:-ms-input-placeholder {
+color: DarkGray !important;
 }
