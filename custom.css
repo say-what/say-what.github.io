@@ -43,12 +43,14 @@ color: White !important;
   font-family: 'Merriweather', serif;
   color: DimGray;
   font-size: 26px;
+  text-align: center;
 }
 
 .card-text {
   font-family: 'Inconsolata', monospace;
   color: DarkGray;
   font-size: 18px;
+  text-align: center;
 }
 
 .form-control {
@@ -84,4 +86,9 @@ color: White !important;
 
 .list-group-item:hover {
   background: blue;
+}
+
+.img-responsive {
+  heigh: 500px !important;
+  width: 250px !important;
 }
