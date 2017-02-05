@@ -1,3 +1,18 @@
+
+function httpQueryTemplates(issue,medium,callback)
+{
+	var url = 'https://hab2017.azurewebsites.net/api/querytemplate/'
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+
+    xmlHttp.open("POST", url, true); // true for asynchronous 
+	xmlHttp.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8' );
+    xmlHttp.send("{'issue':'"+issue+"','medium':'"+medium+"'}");
+}
+
 var input = decodeURI(location.href.substr(location.href.indexOf("?")+1));
 
 var params = {};
@@ -6,10 +21,27 @@ input.split('&').forEach(function(item){
     params[pair[0]] = pair[1];
 });
 
+
 var template = {};
 
-httpQueryTemplates(issue,medium,function(resp) {
+console.log(params)
+
+httpQueryTemplates(params.issue,params.medium,function(resp) {
+	console.log("here")
+	console.log(resp)
     var templates = JSON.parse(resp);
+    console.log(templates)
+    
+    templates.forEach(function(item){
+    	console.log("for each")
+    	var test = $('<div class="carousel-item"><div class="card" style="width: 720px; padding: 25px 200px"><img class="card-img-top" src="..." alt="Card image cap"><div class="card-block"><h4 class="card-title">Card title</h4><p class="card-text">'+item.text+'</p><a href="#" class="btn btn-primary">Go somewhere</a></div></div></div>')
+    	console.log(test)
+    	$("#inner_carousel").append(test)
+    	//$(".carousel-inner").append(test)
+    });
+    $($(".carousel-item")[0]).addClass('active')
+
+
 })
 $("#use_template_button").click(function() {
 
