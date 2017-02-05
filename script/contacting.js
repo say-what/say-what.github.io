@@ -64,7 +64,7 @@ var linkToWriting = function() {
 // TODO:Add input validation for zip
 var zip = location.href.substr(location.href.indexOf("?")+1);
 
-var generic_card = '<div class="carousel-item " index={4}>' +
+var generic_card = '<div class="carousel-item " index={8}>' +
                 '<div class="card" style="width: 800px; height: 480px; padding: 25px 70px">' +
                   '<div class="row">' +
                     '<div class="card-block">' +
@@ -97,7 +97,7 @@ httpGetReps(zip,function(resp) {
           console.log(mail);
         }
         $(".carousel-inner").append( generic_card.format(name, r['party'], r['state'], r['image_url'],
-        r['email_addresses'], r['phone_numbers'], r['district'], mail) );
+        r['email_addresses'], r['phone_numbers'], r['district'], mail, i.toString()) );
     });
 
     $(".dummy").remove()
