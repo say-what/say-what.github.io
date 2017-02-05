@@ -22,44 +22,10 @@ input.split('&').forEach(function(item){
 });
 
 
-var template = {};
-
-console.log(params)
-
-httpQueryTemplates(params.issue,(params.medium == 'call') ? 'phone' : 'letter',function(resp) {
-	console.log("here")
-	console.log(resp)
-    var templates = JSON.parse(resp);
-
-    if(templates.length > 0){
-	    console.log(templates)
-
-	    $(".carousel-item").hide()
-		$(".carousel-item").remove()
-		$(".carousel-item").show()
-	    
-	    templates.forEach(function(item){
-	    	console.log("for each")
-	    	var test = $('<div class="carousel-item"><div class="card" style="width: 1000px; padding: 25px 200px"><div class="card-block"><p class="card-text">'+item.text+'</p></div></div></div>')
-	    	console.log(test)
-	    	$("#inner_carousel").append(test)
-	    	jQuery.data(test, "template", item );
-	    	//$(".carousel-inner").append(test)
-	    });
-	    $($(".carousel-item")[0]).addClass('active')
-	    $(".card-block").css('width','600px')
-
-	}
-	else{
-	}
-
-})
-$("#use_template_button").click(function() {
+k = function() {
 
 	var curr = $(".carousel-item.active")
 	var html = curr[0].innerHTML
-
-	console.log(curr)
 
 	temp = jQuery.data(curr,"template")
 
@@ -87,7 +53,7 @@ $("#use_template_button").click(function() {
 
 	var submit = $('<button style="color:white;float: right;" class="btn btn-primary">Submit</button>');
 
-	$("#use_template_button").replaceWith(submit);
+	$("#use_this_button").replaceWith(submit);
 
 	submit.click(function(){
 
@@ -100,7 +66,44 @@ $("#use_template_button").click(function() {
 			alert("The number to call is: "+number+".  Good luck!")
 		}
 	})
-});
+};
+
+var template = {};
+
+console.log(params)
+
+httpQueryTemplates(params.issue,(params.medium == 'call') ? 'phone' : 'letter',function(resp) {
+	console.log("here")
+	console.log(resp)
+    var templates = JSON.parse(resp);
+
+    if(templates.length > 0){
+	    console.log(templates)
+
+	    $(".carousel-item").hide()
+		$(".carousel-item").remove()
+		$(".carousel-item").show()
+	    
+	    templates.forEach(function(item){
+	    	console.log("for each")
+	    	var test = $('<div class="carousel-item"><div class="card" style="width: 1000px; padding: 25px 200px"><div class="card-block"><p class="card-text">'+item.text+'<a href="#" class="btn btn-primary" id="use_this_button" style="float: right">use this!</a></p></div></div></div>')
+	    	console.log(test)
+	    	$("#inner_carousel").append(test)
+	    	$("#use_this_button").click(k);
+	    	jQuery.data(test, "template", item );
+	    	//$(".carousel-inner").append(test)
+	    });
+	    $($(".carousel-item")[0]).addClass('active')
+	    $(".card-block").css('width','600px')
+
+	}
+	else{
+	}
+
+})
+
+
+
 
 $("#create_template_button").click(function(){
 	console.log($(".jumbotron"))
