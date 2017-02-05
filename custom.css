@@ -46,3 +46,7 @@
 .fa {
   color: Gainsboro;
 }
+
+.list-group-item:hover {
+  background: blue;
+}
