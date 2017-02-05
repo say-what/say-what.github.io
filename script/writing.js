@@ -26,7 +26,7 @@ var template = {};
 
 console.log(params)
 
-httpQueryTemplates(params.issue,params.medium,function(resp) {
+httpQueryTemplates(params.issue,(params.medium == 'call') ? 'phone' : 'letter',function(resp) {
 	console.log("here")
 	console.log(resp)
     var templates = JSON.parse(resp);
