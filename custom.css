@@ -1,0 +1,28 @@
+* {
+  background-color: black !important;
+}
+
+.card {
+
+}
+
+.nav-link, .navbar-brand {
+  font-family: 'Merriweather', serif;
+  font-size: 26px;
+}
+
+.navbar-brand {
+  font-size: 72px;
+}
+
+.card-title {
+  font-family: 'Merriweather', serif;
+  color: DimGray;
+  font-size: 26px;
+}
+
+.card-text {
+  font-family: 'Inconsolata', monospace;
+  color: DarkGray;
+  font-size: 18px;
+}
