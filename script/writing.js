@@ -15,6 +15,8 @@ function httpQueryTemplates(issue,medium,callback)
 
 var input = decodeURI(location.href.substr(location.href.indexOf("?")+1));
 
+var myTemplate = {}
+
 var params = {};
 input.split('&').forEach(function(item){
     var pair = item.split('=');
@@ -27,7 +29,7 @@ k = function() {
 	var curr = $(".carousel-item.active")
 	var html = curr[0].innerHTML
 
-	var temp = jQuery.data(curr,"template")
+	var temp = myTemplate
 	console.log(temp)
 
 	$(".carousel-control-prev").hide()
@@ -90,8 +92,8 @@ httpQueryTemplates(params.issue,(params.medium == 'call') ? 'phone' : 'letter',f
 	    	console.log(test)
 	    	$("#inner_carousel").append(test)
 	    	$("#use_this_button").click(k);
-	    	jQuery.data(test, "template", item );
-	    	
+	    	myTemplate = item;
+
 	    	//$(".carousel-inner").append(test)
 	    });
 	    $($(".carousel-item")[0]).addClass('active')
