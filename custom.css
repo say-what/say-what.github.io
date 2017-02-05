@@ -15,7 +15,7 @@
   font-size: 72px;
 }
 
-.card-title {
+.card-title, #basic-addon1 {
   font-family: 'Merriweather', serif;
   color: DimGray;
   font-size: 26px;
