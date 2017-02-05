@@ -1,6 +1,11 @@
+var zip = location.href.substr(location.href.indexOf("?")+1);
+var template = {};
+//httpGetTemplates("issue_example_id",printCallback)
+httpQueryTemplates(issue,medium,function(resp) {
+    var templates = JSON.parse(resp);
+})
 $("#use_template_button").click(function() {
 
-	var template = {};
 	template.medium = 'call';
 	template.lastName = "BLAHHHHH"
 
