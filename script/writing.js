@@ -1,4 +1,9 @@
 $("#use_template_button").click(function() {
+
+	var template = {};
+	template.medium = 'call';
+	template.lastName = "BLAHHHHH"
+
 	var curr = $(".carousel-item.active")
 	var html = curr[0].innerHTML
 
@@ -14,10 +19,13 @@ $("#use_template_button").click(function() {
     $(".carousel").replaceWith(curr);
 
 
-
-	console.log($("span.adlib"))
 	$("span.adlib").each(function(){
 		$(this).replaceWith('<input type="text" class="adlib" style="color:white;" placeholder="'+this.innerText+'"></input>')
+	});
+
+
+	$("span.official").each(function(){
+		this.innerText = template.lastName
 	});
 
 
@@ -26,11 +34,10 @@ $("#use_template_button").click(function() {
 	$("#use_template_button").replaceWith(submit);
 
 	submit.click(function(){
-		var template = {};
-		template.medium = 'call';
 
 		if(template.medium == 'letter'){
-			//idfk	
+			var address = template//.address
+			alert("The address to mail to is: "+address+".  Good luck!")
 		}
 		else{
 			var number = template//.phoneNumbers[0]
