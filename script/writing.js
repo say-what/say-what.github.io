@@ -1,6 +1,18 @@
+var input = decodeURI(location.href.substr(location.href.indexOf("?")+1));
+
+var params = {};
+input.split('&').forEach(function(item){
+    var pair = item.split('=');
+    params[pair[0]] = pair[1];
+});
+
+var template = {};
+
+httpQueryTemplates(issue,medium,function(resp) {
+    var templates = JSON.parse(resp);
+})
 $("#use_template_button").click(function() {
 
-	var template = {};
 	template.medium = 'call';
 	template.lastName = "BLAHHHHH"
 
