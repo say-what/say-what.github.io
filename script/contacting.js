@@ -3,9 +3,16 @@ issues = ['Business & Economy', 'Labor', 'Jobs', 'Minimum Wage', 'Offshoring', '
 issues = issues.sort()
           
 issues.forEach(function(issue){
-	var div = $('<a class="list-group-item list-group-item-action">'+issue.toLowerCase()+'</a>')
+	var div = $('<a class="issue list-group-item list-group-item-action">'+issue.toLowerCase()+'</a>')
 	$("#issues_list").append(div)
 });
+
+$(".issue").click( function() {
+    $('.issue.selected').removeClass('selected');
+    $(this).addClass('selected');
+    $(this).css('border-color','#fff');
+});
+
 
 // String formatting method
 if (!String.prototype.format) {
