@@ -27,7 +27,8 @@ k = function() {
 	var curr = $(".carousel-item.active")
 	var html = curr[0].innerHTML
 
-	temp = jQuery.data(curr,"template")
+	var temp = jQuery.data(curr,"template")
+	console.log(temp)
 
 	$(".carousel-control-prev").hide()
 	$(".carousel-control-next").hide()
@@ -47,7 +48,7 @@ k = function() {
 
 
 	$("span.official").each(function(){
-		this.innerText = template.lastName
+		this.innerText = temp.lastName
 	});
 
 
@@ -57,18 +58,17 @@ k = function() {
 
 	submit.click(function(){
 
-		if(template.medium == 'letter'){
-			var address = template//.address
+		if(temp.medium == 'letter'){
+			var address = temp.addresses[0]
 			alert("The address to mail to is: "+address+".  Good luck!")
 		}
 		else{
-			var number = template//.phoneNumbers[0]
+			var number = temp.phoneNumbers[0]
 			alert("The number to call is: "+number+".  Good luck!")
 		}
 	})
 };
-
-var template = {};
+		
 
 console.log(params)
 
@@ -91,6 +91,7 @@ httpQueryTemplates(params.issue,(params.medium == 'call') ? 'phone' : 'letter',f
 	    	$("#inner_carousel").append(test)
 	    	$("#use_this_button").click(k);
 	    	jQuery.data(test, "template", item );
+	    	
 	    	//$(".carousel-inner").append(test)
 	    });
 	    $($(".carousel-item")[0]).addClass('active')
