@@ -129,3 +129,7 @@ color: DarkGray !important;
 .list-group-item {
     color:#fff !important;
 }
+
+.issue.selected {
+    border-color:#fff !important;
+}
