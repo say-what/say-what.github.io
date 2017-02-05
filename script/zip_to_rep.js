@@ -14,20 +14,20 @@ if (!String.prototype.format) {
 
 // requires that html file that imports this script also imports InternalAPIRequests.js
 
-// TODO:Add input validation for zip 
+// TODO:Add input validation for zip
 var zip = location.href.substr(location.href.indexOf("?")+1);
 
-var generic_card = '<div class="carousel-item ">' + 
-                '<div class="card" style="width: 800px; height: 480px; padding: 25px 100px">' + 
-                  '<div class="row">' + 
-                    '<div class="card-block">' + 
-                      '<h4 class="card-title">{0}</h4>' + 
-                      '<p class="card-text">{1} / {2}</p>' + 
-                    '</div>' + 
-                    '<div class="container" style="height:250px; width:332px">' + 
-                      '<img class="img-responsive" style="height:360px; width:250px" src="{3}" alt="Card image cap">' + 
-                    '</div>' + 
-                  '</div>' + 
+var generic_card = '<div class="carousel-item ">' +
+                '<div class="card" style="width: 800px; height: 480px; padding: 25px 70px">' +
+                  '<div class="row">' +
+                    '<div class="card-block">' +
+                      '<h4 class="card-title">{0}</h4>' +
+                      '<p class="card-text">{1} / {2}</p>' +
+                    '</div>' +
+                    '<div class="container" style="height:250px; width:332px">' +
+                      '<img class="img-responsive" style="height:320px; width:250px" src="{3}" alt="Card image cap">' +
+                    '</div>' +
+                  '</div>' +
                 '</div>'
 
 httpGetReps(zip,function(resp) {
@@ -41,6 +41,3 @@ httpGetReps(zip,function(resp) {
     $(".dummy").remove()
     $(".carousel-item:nth-of-type(1)").addClass("active");
 });
-
-
-

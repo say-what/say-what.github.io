@@ -41,6 +41,7 @@ color: White !important;
 
 .card-title {
   font-family: 'Merriweather', serif;
+  text-overflow: ellipsis;
   color: DimGray;
   font-size: 26px;
   text-align: center;
