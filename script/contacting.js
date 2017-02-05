@@ -3,7 +3,8 @@ issues = ['Business & Economy', 'Labor', 'Jobs', 'Minimum Wage', 'Offshoring', '
 issues = issues.sort()
 
 issues.forEach(function(issue){
-	var div = $('<a class="issue list-group-item list-group-item-action">'+issue.toLowerCase()+'</a>')
+	var div = $('<button type="button" class="btn-block btn btn-secondary issue ">'+issue.toLowerCase()+'</button>')
+	//var div = $('<a class="issue list-group-item list-group-item-action">'+issue.toLowerCase()+'</a>')
 	$("#issues_list").append(div)
 });
 
@@ -12,6 +13,10 @@ $(".issue").click( function() {
     $(this).addClass('selected');
     $(this).css('border-color','#fff');
 });
+
+$(".medium-btn").click( function(e){ e.preventDefault(); $(".medium-btn.focus").removeClass('focus'); $(this).addClass('focus');});
+$(".stance-btn").click( function(e){ e.preventDefault(); $(".stance-btn.focus").removeClass('focus'); $(this).addClass('focus');});
+$(".issue").click( function(e){ e.preventDefault(); $(".issue.focus").removeClass('focus'); $(this).addClass('focus');});
 
 
 // String formatting method
@@ -62,7 +67,7 @@ httpGetReps(zip,function(resp) {
         var name = r['title'] + ' '+ r['firstName'] + ' ' +  r['lastName'];
         if (name.length > 20) {
           console.log(name)
-          name = r['title'] + ' '+ r['firstName'] + '\n' + r['lastName'];
+          name = r['title'] + ' '+ r['firstName'] + '<br>' + r['lastName'];
         }
         $(".carousel-inner").append( generic_card.format(name, r['party'], r['state'], r['image_url']) );
     });

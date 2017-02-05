@@ -99,6 +99,8 @@ color: DarkGray !important;
   height: 325px;
   width: 238px;
   padding-right: 0px;
+  overflow-x: hidden;
+  z-index: 101;
 }
 
 .img-responsive {
@@ -132,4 +134,12 @@ color: DarkGray !important;
 
 .issue.selected {
     border-color:#fff !important;
+}
+
+.issue {
+    width: 90%;
+}
+
+.btn-secondary {
+    z-index:200;
 }
