@@ -14,7 +14,12 @@ $(".issue").click( function() {
     $(this).css('border-color','#fff');
 });
 
-$(".medium-btn").click( function(e){ e.preventDefault(); $(".medium-btn.focus").removeClass('focus'); $(this).addClass('focus');});
+var checkOptions = function() {
+    if ($(".medium-btn.focus") && $(".stance-btn.focus") && $(".issue.focus")) {
+        $("#nextButton i").css('color','green');
+        $("#nextButton i").on(linkToWriting());}
+};
+$(".medium-btn").click( function(e){ e.preventDefault(); $(".medium-btn.focus").removeClass('focus'); $(this).addClass('focus'); checkOptions();});
 $(".stance-btn").click( function(e){ e.preventDefault(); $(".stance-btn.focus").removeClass('focus'); $(this).addClass('focus');});
 $(".issue").click( function(e){ e.preventDefault(); $(".issue.focus").removeClass('focus'); $(this).addClass('focus');});
 
@@ -34,19 +39,32 @@ if (!String.prototype.format) {
 
 
 // Generate writing.html params
-//var linkToWriting = function() {
-    //var forChange = ___.selected;
-    //var forStay = ___.selected;
-    //var issue =
-    //var official = this.title + ' ' + this.firstName + ' ' + this.lastName;
-    //if (medium == '
+var linkToWriting = function() {
+    var rep = reps[$(".carousel-item.active").attr('index')];
+    var stance = $(".stance-btn.focus")[0].innerText;
+    var issue = $(".issue.focus")[0].innerText;
+    var medium = $(".medium-btn.focus")[0].innerText;
+    var official = rep.title + ' ' + rep.firstName + ' ' + rep.lastName;
+    if (medium == 'email') {
+        window.location.assign('writing.html?' + encodeURI('stance=' + stance + '&' + 'issue=' + issue + '&' +
+                                                        'medium=' + medium + '&official=' + official + '&email=' + rep.email_addresses[0]));
+    } else if(medium == 'call') {
+        window.location.assign('writing.html?' + encodeURI('stance=' + stance + '&' + 'issue=' + issue + '&' +
+                                                        'medium=' + medium + '&official=' + official + '&call=' + rep.number));
+
+    } else if(medium == 'write') {
+        window.location.assign('writing.html?' + encodeURI('stance=' + stance + '&' + 'issue=' + issue + '&' +
+                                                        'medium=' + medium + '&official=' + official + '&write=' + rep.mailing_addresses[0]));
+    }
+};
+
 
 // requires that html file that imports this script also imports InternalAPIRequests.js
 
 // TODO:Add input validation for zip
 var zip = location.href.substr(location.href.indexOf("?")+1);
 
-var generic_card = '<div class="carousel-item ">' +
+var generic_card = '<div class="carousel-item " index={4}>' +
                 '<div class="card" style="width: 800px; height: 480px; padding: 25px 70px">' +
                   '<div class="row">' +
                     '<div class="card-block">' +
@@ -60,16 +78,16 @@ var generic_card = '<div class="carousel-item ">' +
                 '</div>'
 
 httpGetReps(zip,function(resp) {
-    var reps = JSON.parse(resp);
+    reps = JSON.parse(resp);
 
     console.log(reps)
-    reps.forEach(function(r) {
+    reps.forEach(function(r,i) {
         var name = r['title'] + ' '+ r['firstName'] + ' ' +  r['lastName'];
         if (name.length > 20) {
           console.log(name)
           name = r['title'] + ' '+ r['firstName'] + '<br>' + r['lastName'];
         }
-        $(".carousel-inner").append( generic_card.format(name, r['party'], r['state'], r['image_url']) );
+        $(".carousel-inner").append( generic_card.format(name, r['party'], r['state'], r['image_url'], i.toString()) );
     });
 
     $(".dummy").remove()
