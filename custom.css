@@ -106,6 +106,10 @@ color: DarkGray !important;
   width: 250px !important;
 }
 
+#nextButton {
+  font-size: 94px;
+}
+
 
 form-control::-webkit-input-placeholder {
 color: DarkGray !important;

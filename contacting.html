@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
@@ -39,12 +39,19 @@
 <div class="container" style="height: 80px"></div>
     <div class="row">
       <div class="col-lg-2 col-md-2"></div>
-      <div class="col-lg-2 col-md-2" style="margin-left: -40px">
+      <div class="col-lg-3 col-md-3" style="margin-left: -40px">
+
+        <div class="btn-group btn-group-lg" style="margin: 0px -40px" role="group" aria-label="Basic example">
+          <button type="button pull-left" class="btn btn-secondary">for change</button>
+          <button type="button pull-right" class="btn btn-secondary">for maintaining</button>
+        </div>
+
+        <div class="container" style="height: 20px"></div>
 
         <div class="list-group" id="issues_list">
         </div>
 
-        <div class="container" style="height: 50px"></div>
+        <div class="container" style="height: 20px"></div>
 
         <div class="btn-group btn-group-lg" style="margin: 0px -40px" role="group" aria-label="Basic example">
           <button type="button" class="btn btn-secondary">call</button>
@@ -54,6 +61,7 @@
 
       </div>
       <div class="col-lg-7 col-md-7">
+        <div class="row">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -61,44 +69,8 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner" role="listbox">
-              <!--
-                  <div class="carousel-item active">
-                <div class="card" style="width: 800px; height: 480px; padding: 25px 100px">
-                  <div class="row">
-                    <div class="card-block">
-                      <h4 class="card-title">sen. John McCain</h4>
-                      <p class="card-text">republican / arizona</p>
-                    </div>
-                    <div class="container" style="height:250px; width:332px">
-                      <img class="img-responsive" style="height:360px; width:250px" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/John_McCain_official_portrait_2009.jpg" alt="Card image cap">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="card" style="width: 538px; padding: 25px 160px">
-                  <img class="card-img-top" src="..." alt="Card image cap">
-                  <div class="card-block">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="card" style="width: 538px; padding: 25px 160px">
-                  <img class="card-img-top" src="..." alt="Card image cap">
-                  <div class="card-block">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-              -->
               <div class="carousel-item active dummy">
-                <div class="card" style="width: 538px; padding: 25px 160px">
+                <div class="card" style="width: 538px; padding: 0px 160px">
                   <img class="card-img-top" src="..." alt="Card image cap">
                   <div class="card-block">
                     <h4 class="card-title">Card title</h4>
@@ -108,9 +80,14 @@
                 </div>
               </div>
             </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-3 col-md-3"></div>
+              <div class="col-lg-1 col-md-1">
+            <button type="button" id="nextButton" class="btn btn-secondary pull-right btn-lg"><i class="fa fa-arrow-right"></i></button>
+          </div></div>
               <div class="carousel-item dummy">
                 <div class="card" style="width: 538px; padding: 25px 160px">
-                  <img class="card-img-top" src="..." alt="Card image cap">
                   <div class="card-block">
                     <h4 class="card-title">Card title</h4>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -128,6 +105,7 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+        </div>
 
         </div>
 

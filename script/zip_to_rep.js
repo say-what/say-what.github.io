@@ -18,7 +18,7 @@ if (!String.prototype.format) {
 var zip = location.href.substr(location.href.indexOf("?")+1);
 
 var generic_card = '<div class="carousel-item ">' +
-                '<div class="card" style="width: 800px; height: 480px; padding: 25px 70px">' +
+                '<div class="card" style="width: 800px; height: 340px; padding: 25px 70px">' +
                   '<div class="row">' +
                     '<div class="card-block">' +
                       '<h4 class="card-title">{0}</h4>' +
