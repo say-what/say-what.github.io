@@ -99,6 +99,7 @@ color: White !important;
   line-height: 90%;
   margin-top: 12px;
   margin-bottom: 12px;
+  z-index: 100;
 }
 
 .list-group-item:hover {
